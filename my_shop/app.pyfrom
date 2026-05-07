@@ -1,0 +1,14 @@
+
+app = Flask(__name__)
+
+# Products ki list (Aap ise badal sakte hain)
+products = [ {"id": 1, "name": "Organic Turmeric 
+    (Haldi)", "price": 150, "img": "haldi.jpg"}, {"id": 
+    2, "name": "Smartphone Case", "price": 299, "img": 
+    "case.jpg"}, {"id": 3, "name": "Cotton T-Shirt", 
+    "price": 499, "img": "shirt.html"}
+] @app.route('/') def index(): return 
+    render_template('index.html', products=products)
+if __name__ == '__main__':
+    # Termux ke liye host 0.0.0.0 zaroori hai
+    app.run(host='0.0.0.0', port=8080, debug=True)

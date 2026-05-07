@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .card { background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .price { color: green; font-weight: bold; }
+        .buy-btn { background: #25D366; color: white; border: none; padding: 8px; border-radius: 5px; width: 100%; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Hamari Online Shop</h2>
+    <div class="grid">
+        {% for p in products %}
+        <div class="card">
+            <h4>{{ p.name }}</h4>
+            <p class="price">₹{{ p.price }}</p>
+            <button class="buy-btn" onclick="order('{{ p.name }}')">Order on WhatsApp</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function order(name) {
+            let msg = "Hello, mujhe " + name + " kharidna hai.";
+            window.open("https://wa.me/91XXXXXXXXXX?text=" + msg); // Apna number dalein
+        }
+    </script>
+</body>
+</html>
+python app.py
+
+
