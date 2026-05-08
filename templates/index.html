@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Backend Webpage</title>
+    <title>Shubham Store</title>
     <style>
-        body { background: #121212; color: white; font-family: sans-serif; text-align: center; padding-top: 50px; }
-        .card { background: #1e1e1e; padding: 30px; border-radius: 10px; display: inline-block; border: 1px solid #333; }
-        h1 { color: #ffca28; }
-        p { color: #b3b3b3; font-size: 18px; }
-        button { background: #ffca28; border: none; padding: 12px 24px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #1a1a1a; color: white; }
+        .product-card { border: 1px solid #444; padding: 20px; margin: 10px; display: inline-block; border-radius: 10px; background: #222; width: 250px; }
+        .product-card img { width: 100%; border-radius: 5px; }
+        .price { color: #ffcc00; font-size: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Welcome to My Backend Website!</h1>
-        <p>Yeh page direct Flask server se load ho raha hai.</p>
-        <button onclick="alert('Backend is working perfectly!')">Click Me</button>
-<br><br>
-<a href="/about" style="color: #ffca28; text-decoration: none; font-weight: bold;">Go to About Page →</a>
+    <h1>Shubham Store - New Arrivals</h1>
+    <div id="product-list">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.img }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">₹{{ product.price }}</p>
+            <button style="padding: 10px; background: #ffcc00; border: none; border-radius: 5px; cursor: pointer;">Buy Now</button>
+        </div>
+        {% endfor %}
     </div>
+    <br>
+    <a href="/admin" style="color: #888;">Admin Login</a>
 </body>
 </html>
 
