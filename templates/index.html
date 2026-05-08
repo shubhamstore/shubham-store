@@ -19,7 +19,10 @@
             <img src="{{ product.img }}" alt="{{ product.name }}">
             <h3>{{ product.name }}</h3>
             <p class="price">₹{{ product.price }}</p>
-            <button style="padding: 10px; background: #ffcc00; border: none; border-radius: 5px; cursor: pointer;">Buy Now</button>
+<a href="https://wa.me/918700174734?text=Hi, mujhe ye {{ product.name }} kharidni hai. Price: ₹{{ product.price }}" 
+   style="display: inline-block; padding: 10px; background: #25D366; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">
+   Buy on WhatsApp
+</a>
         </div>
         {% endfor %}
     </div>
